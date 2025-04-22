@@ -1,13 +1,21 @@
 import './style.css'
 import ReactDOM from 'react-dom/client'
-import HomePage from "./Pages/HomePage.tsx"
-import React from 'react'
-const root=document.getElementById('app') as HTMLElement
+import React from "react";
+import HomePage from "./Pages/HomePage.tsx";  // Updated to use default import
 
-const rootNode=ReactDOM.createRoot(root)
+const root = document.getElementById('app') as HTMLElement
+
+const rootNode = ReactDOM.createRoot(root)
 
 rootNode.render(
-
-        React.createElement(HomePage)
+  React.createElement(
+    React.StrictMode,
+    null,
+    React.createElement(
+      HomePage,
+      null,
+      'Hello Vite + React!'
+    )
+  )
 
 )
